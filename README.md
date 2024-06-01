@@ -1,2 +1,2 @@
 # image_browser
-This is a web application which loads image that the user want to search.
+A reactjs web appliction where user can search and download the required image.
