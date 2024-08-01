@@ -6,13 +6,18 @@ const Home = () =>{
     
     const [result , setResult] = useState([])
     const[isLoading, setIsLoading] = useState(true)
-    const accesKey = "72r_epAr5KoDWcmLXu7bQZbGDbXAO0C58u_rilzbcqE"
+    const accesKey = "Z6JmMhtXOkGXbYmxFkmjFgsKJJAXnGlaI98dSqFKD9wU0LNGdXjbb3BO"
   useEffect(()=>{
     
-    fetch(`https://api.unsplash.com/photos?&client_id=${accesKey}`)
+    fetch(`https://api.pexels.com/v1/curated/?page=4&per_page=80`,{
+      headers: {
+        Authorization: accesKey
+      }
+    })
       .then(response=>response.json())
       .then(data=>{
-        setResult(data)
+        console.log(data.photos)
+        setResult(data.photos)
         setIsLoading(false)
       },[])
 
@@ -31,10 +36,10 @@ const Home = () =>{
                 return(
                     <img
                     key={val.id}
-                    className="col-3 img-fluid img-thumbnail"
-                    src={val.urls.small}
-                    alt="val.alt_description"
-                    style={{width:'18em',height:'18em'}}
+                    className="col-4 img-fluid img-thumbnail"
+                    src={val.src.large}
+                    alt={val.alt}
+                    style={{width:`${val.width/10}px`,height:`${val.height/10}px`}}
                     />
           
         )

@@ -21,13 +21,13 @@ function App() {
   },[searchText])
 
   return (
-    <>
+    <div style={{backgroundColor:'black'}}>
     <Navbar searchText={searchText} setSearchText={setSearchText}/>
     <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/search' element={<Search keyword={searchText} searchResults={searchResults}/>} />
     </Routes>
-    </>
+    </div>
   );
 }
 
