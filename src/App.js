@@ -3,6 +3,7 @@ import Home from './components/Home.jsx'
 import Navbar from './components/Navbar.jsx';
 import Search from './components/Search.jsx';
 import { Route, Routes } from 'react-router-dom';
+import './App.css'
 
 
 function App() {

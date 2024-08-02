@@ -6,3 +6,44 @@
 .card-img-top{
   object-fit: cover;
 }
+#Forback_btn{
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  
+}
+
+#Forback_btn .prev{
+  border-radius: 50%;
+  margin: 0 20px;
+}
+
+#Forback_btn .next{
+  border-radius: 50%;  
+  margin: 0 20px;
+}
+
+#Forback_btn .page{
+  color: white;
+}
+
+.hero-container{
+  position: relative;
+  z-index: 100;
+}
+
+.hero-text{
+  position: relative;
+  z-index: 200;
+}
+
+.hero-backdrop{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  opacity: 0.5;
+}
