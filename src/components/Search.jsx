@@ -1,4 +1,4 @@
-import { useState , useEffect } from "react";
+import { useState , useEffect , useRef } from "react";
 import Hero from "./hero";
 
 
@@ -6,21 +6,33 @@ import Hero from "./hero";
 const Search=({keyword, searchResults})=>{
     const [result , setResult] = useState([])
     const[isLoading, setIsLoading] = useState(true)
+    const keywordRef = useRef(keyword);
     const accesKey = "Z6JmMhtXOkGXbYmxFkmjFgsKJJAXnGlaI98dSqFKD9wU0LNGdXjbb3BO"
-  useEffect(()=>{
-      
-    fetch(`https://api.pexels.com/v1/search?query=${keyword}&per_page=80`,{
-            headers: {
-                Authorization: accesKey
-            }
-        })
-        .then(response=>response.json())
-        .then(data=>{
-            setIsLoading(true)
-            setResult(data.photos)
-        },[])
 
-  })
+    
+    
+    
+    useEffect(()=>{
+      if(keyword===""){
+        keywordRef.current = "curated/?page=$1"
+      }
+      else{
+        keywordRef.current = `search?query=${keyword}`
+      }
+      fetch(`https://api.pexels.com/v1/${keywordRef.current}&per_page=80`,{
+              headers: {
+                  Authorization: accesKey
+              }
+          })
+          .then(response=>response.json())
+          .then(data=>{
+              setIsLoading(true)
+              setResult(data.photos)
+          },[])
+  
+    })
+
+  
 
   function show(){
 
