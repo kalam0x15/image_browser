@@ -58,7 +58,7 @@ function show(){
                 <img
                 key={val.id}
                 className="col-4 img-fluid img-thumbnail"
-                src={val.src.large}
+                src={val.src.large2x}
                 alt={val.alt}
                 style={{width:`${val.width/10}px`,height:`${val.height/10}px`}}
                 />

@@ -8,6 +8,7 @@ const Search=({keyword, searchResults})=>{
     const[isLoading, setIsLoading] = useState(true)
     const accesKey = "Z6JmMhtXOkGXbYmxFkmjFgsKJJAXnGlaI98dSqFKD9wU0LNGdXjbb3BO"
   useEffect(()=>{
+      
     fetch(`https://api.pexels.com/v1/search?query=${keyword}&per_page=80`,{
             headers: {
                 Authorization: accesKey
