@@ -1,5 +1,7 @@
 import { useState , useEffect , useRef } from "react";
 import Hero from "./hero";
+import cors from 'cors';
+cors();
 
 
 
@@ -7,7 +9,7 @@ const Search=({keyword, searchResults})=>{
     const [result , setResult] = useState([])
     const[isLoading, setIsLoading] = useState(true)
     const keywordRef = useRef(keyword);
-    const accesKey = "Z6JmMhtXOkGXbYmxFkmjFgsKJJAXnGlaI98dSqFKD9wU0LNGdXjbb3BO"
+    const accesKey = process.env.REACT_APP_PEXELS_KEY;
 
     
     

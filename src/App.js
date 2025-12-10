@@ -3,10 +3,11 @@ import Home from './components/Home.jsx'
 import Navbar from './components/Navbar.jsx';
 import Search from './components/Search.jsx';
 import { Route, Routes } from 'react-router-dom';
+import cors from 'cors';
 import './App.css'
 
-
-function App() {
+cors();
+function App(){
 
   
   const [searchText, setSearchText] = useState('');

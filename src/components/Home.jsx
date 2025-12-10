@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import Hero from "./hero"
+import cors from 'cors';
+cors();
 
 
 const Home = () =>{
@@ -7,7 +9,7 @@ const Home = () =>{
     const [result , setResult] = useState([])
     const[isLoading, setIsLoading] = useState(true)
     const [currentIndex, setCurrentIndex] = useState(1);
-    const accesKey = "Z6JmMhtXOkGXbYmxFkmjFgsKJJAXnGlaI98dSqFKD9wU0LNGdXjbb3BO"
+    const accesKey = process.env.REACT_APP_PEXELS_KEY;
 
     const handlePrevClick = () => {
       if (currentIndex > 1) {
